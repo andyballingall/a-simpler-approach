@@ -114,7 +114,11 @@ async function main() {
       });
 
       await eb.send(new PutEventsCommand({ Entries: entries }));
-      console.log("Events sent to Bus");
+      const logEntries = entries.map((e) => ({
+        ...e,
+        Detail: e.Detail ? JSON.parse(e.Detail) : null,
+      }));
+      console.log("Events sent to Bus:", JSON.stringify(logEntries, null, 2));
     }
 
     await new Promise((r) => setTimeout(r, 1000)); // Poll every second

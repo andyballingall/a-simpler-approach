@@ -18,22 +18,16 @@ This project uses [Bun](https://bun.sh/) as the runtime and package manager. It 
    brew install docker-compose
    ```
 
-3. **Bun**:
-
-To install Bun (macOS/Linux):
-
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
-
-After installation, you may need to manually add the following to your `~/.zshrc`:
-
-```bash
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-```
-
-Then restart your terminal or source your profile (e.g., `source ~/.zshrc`) to apply the changes.
+3. **Bun**: To install Bun (macOS/Linux):
+   ```bash
+   curl -fsSL https://bun.sh/install | bash
+   ```
+   After installation, you may need to manually add the following to your `~/.zshrc`:
+   ```bash
+   export BUN_INSTALL="$HOME/.bun"
+   export PATH="$BUN_INSTALL/bin:$PATH"
+   ```
+   Then restart your terminal or source your profile (e.g., `source ~/.zshrc`) to apply the changes.
 
 # AWS Solution Architecture
 
@@ -43,6 +37,8 @@ graph LR
     B --> C[EventBridge Pipes]
     C --> D[EventBridge]
 ```
+
+| The EventBridge Pipes are not available in the LocalStack Community Edition, so we use a local script to emulate the pipe behavior (forwarding Stream records to the Bus). See the steps below for more details.
 
 ## Local Development & Testing
 
