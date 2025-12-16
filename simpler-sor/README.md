@@ -8,9 +8,9 @@ The "A Simpler Approach" pattern leverages serverless technologies (like AWS Dyn
 
 ## Features
 
-*   *(Coming Soon)* Standardized Entity Definitions
-*   *(Coming Soon)* DynamoDB Document Client wrappers
-*   *(Coming Soon)* CDC Event Handling utilities
+- _(Coming Soon)_ Standardized Entity Definitions
+- _(Coming Soon)_ DynamoDB Document Client wrappers
+- _(Coming Soon)_ CDC Event Handling utilities
 
 ## Usage
 

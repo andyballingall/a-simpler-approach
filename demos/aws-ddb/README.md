@@ -13,6 +13,7 @@ This project uses [Bun](https://bun.sh/) as the runtime and package manager. It 
    - Follow the instructions to initialize the Podman machine.
 
 2. **Docker Compose**: Install the Go-based utility via Homebrew. This allows `docker-compose` commands to interact with the Podman socket:
+
    ```bash
    brew install docker-compose
    ```
@@ -20,14 +21,18 @@ This project uses [Bun](https://bun.sh/) as the runtime and package manager. It 
 3. **Bun**:
 
 To install Bun (macOS/Linux):
+
 ```bash
 curl -fsSL https://bun.sh/install | bash
 ```
+
 After installation, you may need to manually add the following to your `~/.zshrc`:
+
 ```bash
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 ```
+
 Then restart your terminal or source your profile (e.g., `source ~/.zshrc`) to apply the changes.
 
 # AWS Solution Architecture
@@ -44,45 +49,59 @@ graph LR
 This project uses **LocalStack** to emulate AWS services locally.
 
 ### 1. Start Infrastructure
+
 Start LocalStack using Docker Compose:
+
 ```bash
 bun run infra:up
 ```
-*Note: Ensure you have Docker or Podman running.*
+
+_Note: Ensure you have Docker or Podman running._
 
 ### 2. Bootstrap Resources
+
 Create the DynamoDB table, EventBridge bus, and other resources:
+
 ```bash
 bun run bootstrap
 ```
 
 ### 3. Start Local Pipe Emulator
+
 Since LocalStack Community Edition does not support EventBridge Pipes, we use a local script to emulate the pipe behavior (forwarding Stream records to the Bus). Run this in a **separate terminal**:
+
 ```bash
 bun run local:pipe
 ```
 
 ### 4. Start the Application
+
 Run the Hono API server in another **separate terminal**:
+
 ```bash
 bun run dev
 ```
 
 ### 5. Run Integration Test
+
 Run the end-to-end integration test. This script will PUT an item to the API and verify that it lands in DynamoDB and triggers a CDC event (verified via a debug SQS queue):
+
 ```bash
 bun run test:integration
 ```
 
 ### 6. Observing the Flow
+
 When you run the test (or use `curl`), you can observe the system in action:
 
-*   **API Terminal** (`bun run dev`): You will see the incoming `PUT /entity-x/:id` request logs.
-*   **Pipe Emulator Terminal** (`bun run local:pipe`): You will see logs indicating it found records in the stream and forwarded them ("Events sent to Bus").
-*   **Integration Test Output**: Prints the confirmed flow: "PUT OK", "DDB OK", and displays the received CDC JSON payload from the SQS queue.
+- **API Terminal** (`bun run dev`): You will see the incoming `PUT /entity-x/:id` request logs.
+- **Pipe Emulator Terminal** (`bun run local:pipe`): You will see logs indicating it found records in the stream and forwarded them ("Events sent to Bus").
+- **Integration Test Output**: Prints the confirmed flow: "PUT OK", "DDB OK", and displays the received CDC JSON payload from the SQS queue.
 
 ### Cleanup
+
 To stop and remove the LocalStack containers:
+
 ```bash
 bun run infra:down
 ```

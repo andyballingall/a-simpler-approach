@@ -6,9 +6,11 @@
     },
     "devDependencies": {
         "husky": "^9.0.0",
-        "lint-staged": "^15.0.0"
+        "lint-staged": "^15.0.0",
+        "prettier": "^3.7.4"
     },
     "lint-staged": {
+        "**/*.{md,yml,yaml}": "bun x prettier --check",
         "demos/**/*.{ts,json}": [
             "echo 'Linting demos...'",
             "cd demos/aws-ddb && bun x biome check"
