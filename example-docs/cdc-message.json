@@ -1,44 +1,38 @@
 {
-    "curr": {
-        "id": "dog-rain-joy",
-        "jsonSchemaId": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
-        "transactionId": "123e4567-e89b-12d3-a456-426614174000",
-        "createdAt": "2025-12-15T15:57:37Z",
-        "updatedAt": "2025-12-16T00:12:09Z",
-        "deletedAt": null,
-        "createdBy": "org-123",
-        "updatedBy": "org-123",
-        "deletedBy": null,
-        "traceId": "9af7651116cd99a8a448eb211c80319d",
-        "spanId": "aaad6b7169209999",
-        "propA": "valueA-changed",
-        "propB": {
-            "propB1": "valueB1",
-            "propB2": [
-                1,
-                2,
-                3
-            ]
-        }
-    },
-    "prev": {
-        "id": "dog-rain-joy",
-        "jsonSchemaId": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
-        "transactionId": "a23e4567-e89b-12d3-a456-426614172000",
-        "createdAt": "2025-12-15T15:57:37Z",
-        "updatedAt": "2025-12-15T15:57:37Z",
-        "deletedAt": null,
-        "createdBy": "org-123",
-        "updatedBy": "org-123",
-        "deletedBy": null,
-        "traceId": "0af7651916cd43dd8448eb211c80319c",
-        "spanId": "b7ad6b7169203331",
-        "propA": "valueA",
-        "propB": {
-            "propB1": "valueB1",
-            "propB2": [
-                1
-            ]
-        }
+  "curr": {
+    "id": "dog-rain-joy",
+    "jsonSchemaId": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
+    "transactionId": "123e4567-e89b-12d3-a456-426614174000",
+    "createdAt": "2025-12-15T15:57:37Z",
+    "updatedAt": "2025-12-16T00:12:09Z",
+    "deletedAt": null,
+    "createdBy": "org-123",
+    "updatedBy": "org-123",
+    "deletedBy": null,
+    "traceId": "9af7651116cd99a8a448eb211c80319d",
+    "spanId": "aaad6b7169209999",
+    "propA": "valueA-changed",
+    "propB": {
+      "propB1": "valueB1",
+      "propB2": [1, 2, 3]
     }
+  },
+  "prev": {
+    "id": "dog-rain-joy",
+    "jsonSchemaId": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
+    "transactionId": "a23e4567-e89b-12d3-a456-426614172000",
+    "createdAt": "2025-12-15T15:57:37Z",
+    "updatedAt": "2025-12-15T15:57:37Z",
+    "deletedAt": null,
+    "createdBy": "org-123",
+    "updatedBy": "org-123",
+    "deletedBy": null,
+    "traceId": "0af7651916cd43dd8448eb211c80319c",
+    "spanId": "b7ad6b7169203331",
+    "propA": "valueA",
+    "propB": {
+      "propB1": "valueB1",
+      "propB2": [1]
+    }
+  }
 }

@@ -1,22 +1,18 @@
 {
-    "id": "dog-rain-joy",
-    "jsonSchemaId": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
-    "transactionId": "123e4567-e89b-12d3-a456-426614174000",
-    "createdAt": "2025-12-15T15:57:37Z",
-    "updatedAt": "2025-12-15T15:57:37Z",
-    "deletedAt": null,
-    "createdBy": "org-123",
-    "updatedBy": "org-123",
-    "deletedBy": null,
-    "traceId": "0af7651916cd43dd8448eb211c80319c",
-    "spanId": "b7ad6b7169203331",
-    "propA": "valueA",
-    "propB": {
-        "propB1": "valueB1",
-        "propB2": [
-            1,
-            2,
-            3
-        ]
-    }
+  "id": "dog-rain-joy",
+  "jsonSchemaId": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
+  "transactionId": "123e4567-e89b-12d3-a456-426614174000",
+  "createdAt": "2025-12-15T15:57:37Z",
+  "updatedAt": "2025-12-15T15:57:37Z",
+  "deletedAt": null,
+  "createdBy": "org-123",
+  "updatedBy": "org-123",
+  "deletedBy": null,
+  "traceId": "0af7651916cd43dd8448eb211c80319c",
+  "spanId": "b7ad6b7169203331",
+  "propA": "valueA",
+  "propB": {
+    "propB1": "valueB1",
+    "propB2": [1, 2, 3]
+  }
 }
