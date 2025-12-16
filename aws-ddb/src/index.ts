@@ -7,6 +7,6 @@ app.get("/health", (c) => c.text("OK"));
 app.route("/", putEntityX);
 
 export default {
-    port: 3000,
-    fetch: app.fetch,
+  port: 3000,
+  fetch: app.fetch,
 };

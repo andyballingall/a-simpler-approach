@@ -1,37 +1,31 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
-    "type": "object",
-    "allOf": [
-        {
-            "$ref": "entity_base_1-0-0.schema.json"
-        }
-    ],
-    "properties": {
-        "propA": {
-            "type": "string"
-        },
-        "propB": {
-            "type": "object",
-            "properties": {
-                "propB1": {
-                    "type": "string"
-                },
-                "propB2": {
-                    "type": "array",
-                    "items": {
-                        "type": "integer"
-                    }
-                }
-            },
-            "required": [
-                "propB1",
-                "propB2"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "entity_base_1-0-0.schema.json"
+    }
+  ],
+  "properties": {
+    "propA": {
+      "type": "string"
     },
-    "required": [
-        "propA",
-        "propB"
-    ]
+    "propB": {
+      "type": "object",
+      "properties": {
+        "propB1": {
+          "type": "string"
+        },
+        "propB2": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "required": ["propB1", "propB2"]
+    }
+  },
+  "required": ["propA", "propB"]
 }

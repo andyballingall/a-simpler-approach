@@ -1,70 +1,58 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://json-schema.myorg.com/entity_base_1-0-0.schema.json",
-    "type": "object",
-    "description": "Base schema for all entities",
-    "properties": {
-        "id": {
-            "type": "string"
-        },
-        "jsonSchemaId": {
-            "type": "string",
-            "format": "uri",
-            "pattern": "^https://json-schema\\.myorg\\.com/[a-z0-9]+_[a-z0-9]+_[0-9]+-[0-9]+-[0-9]+\\.schema\\.json$"
-        },
-        "transactionId": {
-            "type": "string",
-            "format": "uuid"
-        },
-        "createdAt": {
-            "type": "string",
-            "format": "date-time"
-        },
-        "updatedAt": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "format": "date-time"
-        },
-        "deletedAt": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "format": "date-time"
-        },
-        "createdBy": {
-            "type": "string"
-        },
-        "updatedBy": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "deletedBy": {
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "traceId": {
-            "type": "string",
-            "pattern": "^[0-9a-f]{32}$"
-        },
-        "spanId": {
-            "type": "string",
-            "pattern": "^[0-9a-f]{16}$"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://json-schema.myorg.com/entity_base_1-0-0.schema.json",
+  "type": "object",
+  "description": "Base schema for all entities",
+  "properties": {
+    "id": {
+      "type": "string"
     },
-    "required": [
-        "id",
-        "jsonSchemaId",
-        "transactionId",
-        "createdAt",
-        "createdBy",
-        "traceId",
-        "spanId"
-    ]
+    "jsonSchemaId": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://json-schema\\.myorg\\.com/[a-z0-9]+_[a-z0-9]+_[0-9]+-[0-9]+-[0-9]+\\.schema\\.json$"
+    },
+    "transactionId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "deletedAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "createdBy": {
+      "type": "string"
+    },
+    "updatedBy": {
+      "type": ["string", "null"]
+    },
+    "deletedBy": {
+      "type": ["string", "null"]
+    },
+    "traceId": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{32}$"
+    },
+    "spanId": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$"
+    }
+  },
+  "required": [
+    "id",
+    "jsonSchemaId",
+    "transactionId",
+    "createdAt",
+    "createdBy",
+    "traceId",
+    "spanId"
+  ]
 }
