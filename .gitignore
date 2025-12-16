@@ -1,0 +1,7 @@
+node_modules
+.bun
+dist
+.env
+.DS_Store
+coverage
+.custom-work-dir

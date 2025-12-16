@@ -1,0 +1,21 @@
+{
+    "name": "a-simpler-approach-root",
+    "private": true,
+    "scripts": {
+        "prepare": "husky"
+    },
+    "devDependencies": {
+        "husky": "^9.0.0",
+        "lint-staged": "^15.0.0"
+    },
+    "lint-staged": {
+        "demos/**/*.{ts,json}": [
+            "echo 'Linting demos...'",
+            "cd demos/aws-ddb && bun x biome check --write"
+        ],
+        "simpler-sor/**/*.{ts,json}": [
+            "echo 'Linting simpler-sor...'",
+            "cd simpler-sor && bun x biome check --write"
+        ]
+    }
+}
