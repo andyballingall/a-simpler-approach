@@ -11,11 +11,11 @@
     "lint-staged": {
         "demos/**/*.{ts,json}": [
             "echo 'Linting demos...'",
-            "cd demos/aws-ddb && bun x biome check --write"
+            "cd demos/aws-ddb && bun x biome check"
         ],
         "simpler-sor/**/*.{ts,json}": [
             "echo 'Linting simpler-sor...'",
-            "cd simpler-sor && bun x biome check --write"
+            "cd simpler-sor && bun x biome check"
         ]
     }
 }
