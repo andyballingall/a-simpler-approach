@@ -1,5 +1,7 @@
 {
     "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.detectIndentation": false,
     "editor.codeActionsOnSave": {
         "source.fixAll.biome": "explicit",
         "source.organizeImports.biome": "explicit"
