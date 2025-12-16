@@ -1,0 +1,37 @@
+Starting integration test...
+PUT item test-1765879412462...
+PUT OK
+Verifying DynamoDB...
+DDB OK
+Polling SQS for CDC event...
+Received CDC Event: {
+  "version": "0",
+  "id": "ffa8da9c-15fc-4d31-a558-cf4a5716237d",
+  "detail-type": "Entity Change",
+  "source": "myorg.entity-x",
+  "account": "000000000000",
+  "time": "2025-12-16T10:00:38Z",
+  "region": "us-east-1",
+  "resources": [],
+  "detail": {
+    "curr": {
+      "id": "test-1765879238522",
+      "jsonSchemaId": "https://json-schema.myorg.com/entity_x_1-0-0.schema.json",
+      "transactionId": "123e4567-e89b-12d3-a456-426614174000",
+      "createdAt": "2025-12-16T10:00:38.522Z",
+      "updatedAt": "2025-12-16T10:00:38.522Z",
+      "createdBy": "test-runner",
+      "traceId": "0af7651916cd43dd8448eb211c80319c",
+      "spanId": "b7ad6b7169203331",
+      "propA": "test-val",
+      "propB": {
+        "propB1": "b1",
+        "propB2": [
+          1
+        ]
+      }
+    },
+    "prev": null
+  }
+}
+Integration Test Passed!
