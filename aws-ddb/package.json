@@ -9,7 +9,11 @@
     "test:integration": "bun run test/integration.ts",
     "infra:up": "docker-compose up -d",
     "infra:down": "docker-compose down",
-    "local:pipe": "bun run infra/local-pipe.ts"
+    "local:pipe": "bun run infra/local-pipe.ts",
+    "check": "bun x biome check .",
+    "check:fix": "bun x biome check --write .",
+    "format": "bun x biome format .",
+    "lint": "bun x biome lint ."
   },
   "devDependencies": {
     "@aws-sdk/client-dynamodb-streams": "^3.952.0",
