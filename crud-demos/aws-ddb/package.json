@@ -9,6 +9,7 @@
     "test:integration": "bun run test/integration.ts",
     "infra:up": "docker-compose up -d",
     "infra:down": "docker-compose down",
+    "local:init": "bun run infra:up && bun run bootstrap && bun run dev",
     "local:pipe": "bun run infra/local-pipe.ts",
     "check": "bun x biome check .",
     "check:fix": "bun x biome check --write .",

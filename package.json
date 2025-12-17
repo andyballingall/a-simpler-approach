@@ -12,9 +12,9 @@
   },
   "lint-staged": {
     "**/*.{md,yml,yaml}": "bun x prettier --check",
-    "demos/**/*.{ts,json}": [
-      "echo 'Linting demos...'",
-      "cd demos/aws-ddb && bun x biome check"
+    "crud-demos/**/*.{ts,json}": [
+      "echo 'Linting crud-demos...'",
+      "cd crud-demos/aws-ddb && bun x biome check"
     ],
     "simpler-sor/**/*.{ts,json}": [
       "echo 'Linting simpler-sor...'",

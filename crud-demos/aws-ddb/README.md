@@ -33,16 +33,48 @@ This project uses [Bun](https://bun.sh/) as the runtime and package manager. It 
 
 ```mermaid
 graph LR
-    A[DynamoDB] --> B[DynamoDB Streams]
-    B --> C[EventBridge Pipes]
+    A[DynamoDB] --> B[DynamoDB Stream]
+    B --> C[EventBridge Pipe]
     C --> D[EventBridge]
 ```
 
-| The EventBridge Pipes are not available in the LocalStack Community Edition, so we use a local script to emulate the pipe behavior (forwarding Stream records to the Bus). See the steps below for more details.
+[!Note]
+The EventBridge Pipes are not available in the LocalStack Community Edition, so for local development we use a local script to emulate the pipe behavior (forwarding Stream records to the Bus). See the steps below for more details.
 
-## Local Development & Testing
+```mermaid
+flowchart LR
+    L1[DynamoDB] --> L2[DynamoDB Stream]
+    L3[Pipe Emulator Script] -. Polls .-> L2
+    L3 -- PutEvents --> L4[EventBridge]
+```
+
+## Running Locally - Quickstart
 
 This project uses **LocalStack** to emulate AWS services locally.
+
+### Quickstart
+
+To quickly spin up the local infrastructure, bootstrap resources, and **start the API server**, run:
+
+```bash
+bun run local:init
+```
+
+Next, as we're using the local pipe emulator, open a new terminal, and run:
+
+```bash
+bun run local:pipe
+```
+
+This will poll the DynamoDB stream and forward events to the EventBridge bus.
+
+Finally, in a new terminal, you can test the API by running the following:
+
+```bash
+bun run test:integration
+```
+
+## Running Locally - Step-by-Step
 
 ### 1. Start Infrastructure
 
